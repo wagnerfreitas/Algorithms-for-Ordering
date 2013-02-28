@@ -33,6 +33,14 @@ namespace MetodosDeOrdenecao.Testes
             Assert.That(SaoIguais(vetor, vetorOrdenado));
         }
 
+        [Test]
+        public void PossoOrdenarUsandoInsertionSort()
+        {
+            metodos.InsertionSort(vetor);
+
+            Assert.That(SaoIguais(vetor, vetorOrdenado));
+        }
+
         private bool SaoIguais(int[] vetor1, int[] vetor2)
         {
             var saoIguais = false;

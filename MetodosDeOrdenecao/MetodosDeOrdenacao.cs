@@ -45,5 +45,24 @@
 
             return vetor;
         }
+
+        public int[] InsertionSort(int[] vetor)
+        {
+            for (var i = 0; i < vetor.Length; i++)
+            {
+                var pivo = vetor[i];
+
+                var j = i - 1;
+
+                while (j >= 0 && vetor[j] > pivo)
+                {
+                    vetor[j + 1] = vetor[j];
+                    j--;
+                }
+                vetor[j + 1] = pivo;
+            }
+
+            return vetor;
+        }
     }
 }
