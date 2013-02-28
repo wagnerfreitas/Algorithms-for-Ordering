@@ -1,1 +1,6 @@
-C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\bin\Debug\MetodosDeOrdenecao.exe.config
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\bin\Debug\MetodosDeOrdenecao.dll.config
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\bin\Debug\MetodosDeOrdenecao.dll
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\bin\Debug\MetodosDeOrdenecao.pdb
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\obj\Debug\MetodosDeOrdenecao.dll
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\obj\Debug\MetodosDeOrdenecao.pdb
+C:\Users\wagnersousa\projetos\MetodosDeOrdenecao\MetodosDeOrdenecao\obj\Debug\MetodosDeOrdenecao.csprojResolveAssemblyReference.cache
