@@ -64,5 +64,23 @@
 
             return vetor;
         }
+
+        public int[] SelectionSort(int[] vetor)
+        {
+            for (var i = 0; i < vetor.Length - 1; i++)
+            {
+                var min = i;
+                for (var j = i + 1; j < vetor.Length; j++)
+                {
+                    if (vetor[j] < vetor[min])
+                        min = j;
+                }
+                var swap = vetor[i];
+                vetor[i] = vetor[min];
+                vetor[min] = swap;
+            }
+
+            return vetor;
+        }
     }
 }
