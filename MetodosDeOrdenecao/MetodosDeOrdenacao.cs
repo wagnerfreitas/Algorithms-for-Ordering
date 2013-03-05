@@ -1,4 +1,6 @@
-﻿namespace MetodosDeOrdenecao
+﻿using System;
+
+namespace MetodosDeOrdenecao
 {
     public class MetodosDeOrdenacao
     {
@@ -79,6 +81,30 @@
                 vetor[i] = vetor[min];
                 vetor[min] = swap;
             }
+
+            return vetor;
+        }
+
+        public int[] ShellSort(int[] vetor)
+        {
+            var hlistas = 1;
+            while (hlistas < vetor.Length)
+                hlistas = 3 * hlistas + 1;
+            do
+            {
+                hlistas = (int)Math.Floor(hlistas / 3d);
+                for (var i = 0; i < vetor.Length; i++)
+                {
+                    var pivo = vetor[i];
+                    var j = i - hlistas;
+                    while (j >= 0 && vetor[j] > pivo)
+                    {
+                        vetor[j + hlistas] = vetor[j];
+                        j = j - hlistas;
+                    }
+                    vetor[j + hlistas] = pivo;
+                }
+            } while (hlistas > 1);
 
             return vetor;
         }

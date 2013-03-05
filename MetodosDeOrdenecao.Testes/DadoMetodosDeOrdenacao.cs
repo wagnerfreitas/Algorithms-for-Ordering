@@ -30,7 +30,7 @@ namespace MetodosDeOrdenecao.Testes
         {
             metodos.BubbleSortWithFlag(vetor);
 
-            Assert.That(SaoIguais(vetor, vetorOrdenado));
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace MetodosDeOrdenecao.Testes
         {
             metodos.InsertionSort(vetor);
 
-            Assert.That(SaoIguais(vetor, vetorOrdenado));
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
         }
 
         [Test]
@@ -46,7 +46,15 @@ namespace MetodosDeOrdenecao.Testes
         {
             metodos.SelectionSort(vetor);
 
-            Assert.That(SaoIguais(vetor, vetorOrdenado));
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
+        }
+
+        [Test]
+        public void PossoOrdenarUsandoOShellSort()
+        {
+            metodos.ShellSort(vetor);
+
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
         }
 
         private bool SaoIguais(int[] vetor1, int[] vetor2)
