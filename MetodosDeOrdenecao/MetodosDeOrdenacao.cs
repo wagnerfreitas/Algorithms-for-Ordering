@@ -108,5 +108,48 @@ namespace MetodosDeOrdenecao
 
             return vetor;
         }
+
+        public int[] MergeSort(int[] vetor, int inicio, int fim)
+        {
+            if (inicio < fim)
+            {
+                var meio = (int)Math.Floor((inicio + fim) / 2d);
+                if (inicio < meio)
+                    MergeSort(vetor, inicio, meio);
+                if (meio + 1 < fim)
+                    MergeSort(vetor, meio + 1, fim);
+
+                MergeVetores(vetor, inicio, meio, fim);
+            }
+
+            return vetor;
+        }
+
+        private static void MergeVetores(int[] vetor, int inicio, int meio, int fim)
+        {
+            int i = inicio, j = meio + 1, k = 0;
+            var vetorAux = new int[vetor.Length];
+            while (i <= meio && j <= fim)
+            {
+                if (vetor[i] <= vetor[j])
+                {
+                    vetorAux[k] = vetor[i];
+                    i++;
+                }
+                else
+                {
+                    vetorAux[k] = vetor[j];
+                    j++;
+                }
+                k++;
+            }
+            if (i <= meio)
+            {
+                for (j = meio; j > i; j--)
+                    vetor[fim - meio + j] = vetor[j];
+            }
+            for (i = 0; i < k - 1; i++)
+                vetor[inicio + i] = vetorAux[i];
+        }
     }
 }
