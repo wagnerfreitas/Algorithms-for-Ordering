@@ -125,10 +125,48 @@ namespace MetodosDeOrdenecao
             return vetor;
         }
 
+        public int[] QuickSort(int[] vetor, int inicio, int fim)
+        {
+            if (inicio < fim)
+            {
+                var particao = Particao(vetor, inicio, fim);
+                if (inicio < particao - 1)
+                    QuickSort(vetor, inicio, particao - 1);
+                else if (particao + 1 < fim)
+                    QuickSort(vetor, particao + 1, fim);
+            }
+
+            return vetor;
+        }
+
+        private static int Particao(int[] vetor, int inicio, int fim)
+        {
+            int pivo = vetor[inicio], i = inicio + 1, j = fim;
+            while (i <= j)
+            {
+                while (i <= j && vetor[i] <= pivo)
+                    i++;
+                while (vetor[j] > pivo)
+                    j--;
+                if (i <= j)
+                {
+                    var swap = vetor[i];
+                    vetor[i] = vetor[j];
+                    vetor[j] = swap;
+                    i++; j--;
+                }
+            }
+            var troca = vetor[inicio];
+            vetor[inicio] = vetor[j];
+            vetor[j] = troca;
+
+            return j;
+        }
+
         private static void MergeVetores(int[] vetor, int inicio, int meio, int fim)
         {
             int i = inicio, j = meio + 1, k = 0;
-            var vetorAux = new int[vetor.Length];
+            var vetorAux = new int[vetor.Length - 1];
             while (i <= meio && j <= fim)
             {
                 if (vetor[i] <= vetor[j])
@@ -145,10 +183,10 @@ namespace MetodosDeOrdenecao
             }
             if (i <= meio)
             {
-                for (j = meio; j > i; j--)
+                for (j = meio; j >= i; j--)
                     vetor[fim - meio + j] = vetor[j];
             }
-            for (i = 0; i < k - 1; i++)
+            for (i = 0; i < k; i++)
                 vetor[inicio + i] = vetorAux[i];
         }
     }

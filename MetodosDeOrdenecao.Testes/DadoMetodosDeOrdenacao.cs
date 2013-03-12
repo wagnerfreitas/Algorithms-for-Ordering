@@ -65,7 +65,20 @@ namespace MetodosDeOrdenecao.Testes
 
             metodos.MergeSort(vetor, inicio, fim);
 
-            Assert.That(SaoIguais(vetor, vetorOrdenado));
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
+        }
+
+        [Test]
+        public void PossoOrdenarUsandoOQuickSort()
+        {
+            const int inicio = 0;
+            var fim = vetor.Length - 1;
+
+            var v = new[] { 2, 1, 7, 6, 7, 15, 3, 8 };
+
+            metodos.QuickSort(v, 0, 7);
+
+            Assert.True(SaoIguais(vetor, vetorOrdenado));
         }
 
         private bool SaoIguais(int[] vetor1, int[] vetor2)
