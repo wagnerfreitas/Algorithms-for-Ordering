@@ -12,9 +12,9 @@ namespace MetodosDeOrdenecao.Testes
         [SetUp]
         public void Cenario()
         {
-            vetor = new[] { 2, 1, 7, 6, 7, 15, 3, 8 };
+            vetor = new[] { 2, 1, 7, 6, 7, 15, 3, 8, 4, 5, 9 };
             metodos = new MetodosDeOrdenacao();
-            vetorOrdenado = new[] { 1, 2, 3, 6, 7, 7, 8, 15 };
+            vetorOrdenado = new[] { 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 15 };
         }
 
         [Test]
@@ -74,9 +74,7 @@ namespace MetodosDeOrdenecao.Testes
             const int inicio = 0;
             var fim = vetor.Length - 1;
 
-            var v = new[] { 2, 1, 7, 6, 7, 15, 3, 8 };
-
-            metodos.QuickSort(v, 0, 7);
+            metodos.QuickSort(vetor, inicio, fim);
 
             Assert.True(SaoIguais(vetor, vetorOrdenado));
         }

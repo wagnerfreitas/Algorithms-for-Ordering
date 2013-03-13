@@ -166,7 +166,7 @@ namespace MetodosDeOrdenecao
         private static void MergeVetores(int[] vetor, int inicio, int meio, int fim)
         {
             int i = inicio, j = meio + 1, k = 0;
-            var vetorAux = new int[vetor.Length - 1];
+            var vetorAux = new int[fim - inicio];
             while (i <= meio && j <= fim)
             {
                 if (vetor[i] <= vetor[j])
